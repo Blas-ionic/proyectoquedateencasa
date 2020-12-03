@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">notoficacionesPush</string>
+    <string name="title_activity_main">notoficacionesPush</string>
+    <string name="package_name">com.notificaciones.push</string>
+    <string name="custom_url_scheme">com.notificaciones.push</string>
+</resources>

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="primary"> Listo</ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            Quédate En Casa
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-grid>
+        <form (ngSubmit)="onUpdateInfo(UpRegistro)" #UpRegistro="ngForm">
+            <app-avatar-selector (avatarSel)="info.photoUrl = $event"></app-avatar-selector>
+            <ion-row>
+                <ion-col>
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-label position="floating">Usuario</ion-label>
+                                    <ion-input name="username" [(ngModel)]="info.username" type="text" required></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Nombre</ion-label>
+                                    <ion-input name="name" [(ngModel)]="info.name" type="text" required></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Descripcion</ion-label>
+                                    <ion-input name="description" [(ngModel)]="info.description" type="text" required></ion-input>
+                                </ion-item>
+                            </ion-list>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-button type="submit" color="tertiary" shape="round">
+                                        Actualizar
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-grid>
+
+</ion-content>

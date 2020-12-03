@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="presentPopover($event)">
+                <ion-icon slot="icon-only" ios="person" md="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>popover</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button (click)="presentPopover($event)">
+        Click me
+    </ion-button>
+</ion-content>

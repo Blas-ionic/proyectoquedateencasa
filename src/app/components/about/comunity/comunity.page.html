@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="primary"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            Quédate En Casa
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Comunidad
+            </ion-card-title>
+        </ion-card-header>
+
+        <ion-slides pager="true">
+            <ion-slide class="image-slide" [style]="img1 | domSanitizer">
+            </ion-slide>
+            <ion-slide class="image-slide" [style]="img2 | domSanitizer">
+            </ion-slide>
+        </ion-slides>
+    </ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-center ">
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title>Siguenos por Facebook!</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-button href="https://www.facebook.com/quedateencasateziutlan">
+                                <ion-icon name="thumbs-up-outline" slot="start"></ion-icon>
+                                Quedate En Casa teziutlan
+                            </ion-button>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-center ">
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title>Visita nuestra Pagina Web!</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-button href="http://quedateencasateziutlan.org.mx/">
+                                <ion-icon name="thumbs-up-outline" slot="start"></ion-icon>
+                                Quedate En Casa teziutlan
+                            </ion-button>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-list>
+    <ion-list-header>Opciones</ion-list-header>
+    <ion-item button (click)="onPerfil()">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <small>Perfil</small>
+    </ion-item>
+    <ion-item button (click)="onAbout()">
+        <ion-icon slot="start" name="clipboard"></ion-icon>
+        <small>Acerca de</small>
+    </ion-item>
+    <ion-item button (click)="logout()">
+        <ion-icon slot="start" name="exit-outline"></ion-icon>
+        <small>Cerrar Sesion</small>
+    </ion-item>
+</ion-list>

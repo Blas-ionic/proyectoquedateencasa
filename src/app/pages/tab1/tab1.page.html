@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <ion-icon name="home">
+            </ion-icon>
+            Quédate En Casa
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="presentPopover($event)">
+                <ion-icon slot="icon-only" ios="person" md="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+    <app-posts [posts]="posts"></app-posts>
+
+    <ion-infinite-scroll [disabled]="!habilitar" threshold="150px" (ionInfinite)="nextPost($event)">
+        <ion-infinite-scroll-content>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+    <ion-refresher slot="fixed" (ionRefresh)="refreshPost($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+</ion-content>

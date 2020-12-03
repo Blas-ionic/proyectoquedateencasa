@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <ion-icon name="home">
+            </ion-icon>
+            Quédate En Casa
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="presentPopover($event)">
+                <ion-icon slot="icon-only" ios="person" md="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-slides pager="true">
+            <ion-slide class="image-slide" [style]="img1 | domSanitizer">
+            </ion-slide>
+            <ion-slide class="image-slide" [style]="img2 | domSanitizer">
+            </ion-slide>
+        </ion-slides>
+    </ion-card>
+    <ion-chip>
+        <ion-avatar>
+            <img src="/assets/icon/quedate_logo.png">
+        </ion-avatar>
+        <ion-label>Momentos de reflexion</ion-label>
+    </ion-chip>
+    <ion-card>
+        <ion-card-content>
+            <p>
+                Quédate en casa Teziutlán es una plataforma de comunicación virtual para que Tú, Yo, Nosotros y todos los Teziutecos aportemos a nuestras familias y amigos, mensajes de aliento, tips, consejos y ayuda, para lograr superar día a día la pandemia mundial
+                del Coronavirus (COVID-19) que nos ha tocado vivir.
+            </p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <p> Servirá como testimonio para la posteridad y será el orgullo de nuestros descendientes para que sepan que sus ancestros rebasaron la adversidad y lograron ayudarse unos con otros. Quedarse en casa no es estar solos o aislados.</p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

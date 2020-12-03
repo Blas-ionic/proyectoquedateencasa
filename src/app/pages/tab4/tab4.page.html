@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <ion-icon name="home">
+            </ion-icon>
+            Quédate En Casa
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="presentPopover($event)">
+                <ion-icon slot="icon-only" ios="person" md="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-slides pager="true">
+            <ion-slide class="image-slide" [style]="img1 | domSanitizer">
+            </ion-slide>
+            <ion-slide class="image-slide" [style]="img2 | domSanitizer">
+            </ion-slide>
+        </ion-slides>
+    </ion-card>
+
+    <ion-list>
+        <ion-item *ngFor="let c of componentes">
+            <ion-icon name="{{c.icon}}" slot="start" color="primary"></ion-icon>
+            {{c.name}}
+            <ion-button slot="end" [routerLink]="c.redirecTo">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
