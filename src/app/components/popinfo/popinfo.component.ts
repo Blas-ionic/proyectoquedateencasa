@@ -14,11 +14,11 @@ export class PopinfoComponent implements OnInit {
   items: Componente[] = [
     {
       name: 'Perfil',
-      redirecTo: '/tabs/tab4//informacion'
+      redirecTo: '/tabs/quedatecasa/informacion'
     },
     {
       name: 'Acerca de',
-      redirecTo: '/tabs/tab4/comunidad'
+      redirecTo: '/tabs/quedatecasa/comunidad'
     }
   ];
 
@@ -28,12 +28,12 @@ export class PopinfoComponent implements OnInit {
 
   onPerfil(){
     this.popoverController.dismiss(
-      this.router.navigateByUrl('/tabs/tab3')
+      this.router.navigateByUrl('/tabs/usuario')
     );
   }
   onAbout(){
     this.popoverController.dismiss(
-      this.router.navigateByUrl('/tabs/tab4')
+      this.router.navigateByUrl('/tabs/quedatecasa')
     );
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-splash',
@@ -8,10 +8,10 @@ import {Router} from "@angular/router";
 })
 export class SplashPage implements OnInit {
 
-  constructor(public router:Router) {
+  constructor(public router: Router) {
     setTimeout(() => {
-      this.router.navigateByUrl('login');
-    },2000);
+      this.router.navigateByUrl('tabs/inicio');
+    }, 1500);
   }
 
   ngOnInit() {

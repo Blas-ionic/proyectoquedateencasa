@@ -33,6 +33,13 @@ export class LoginPage implements OnInit {
     password: ''
   };
 
+  recoveryUser: UsuarioModel = {
+    email: '',
+    displayName: '',
+    photoUrl: '',
+    password: ''
+  };
+
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -57,7 +64,7 @@ export class LoginPage implements OnInit {
         .subscribe( (resp: any) => {
           this.loading.dismiss();
           this.toastSuccess(resp.email);
-          this.router.navigateByUrl('/tabs/tab2');
+          this.router.navigateByUrl('/tabs/inicio');
         }, (err) => {
           this.loading.dismiss();
           this.toastError();
@@ -65,7 +72,6 @@ export class LoginPage implements OnInit {
         });
     }, 2000);
   }
-
   async logincSuccess() {
     this.loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
@@ -74,7 +80,6 @@ export class LoginPage implements OnInit {
     });
     await this.loading.present();
   }
-
   async initLoading() {
     this.loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
@@ -83,7 +88,6 @@ export class LoginPage implements OnInit {
     });
     await this.loading.present();
   }
-
   async toastSuccess(message: string) {
     const toast = await this.toastController.create({
       message: `Bienvenido ${message}`,
@@ -92,7 +96,6 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
-
   async toastError() {
     const toast = await this.toastController.create({
       message: 'Correo y/o Contraseña Incorrecta.',
@@ -101,18 +104,57 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
+  async toastErrorRegister() {
+    const toast = await this.toastController.create({
+      message: 'Correo electronico ya existente.',
+      position: 'bottom',
+      duration: 2500
+    });
+    toast.present();
+  }
+  async toastErrorMesage() {
+    const toast = await this.toastController.create({
+      message: 'Correo electronico no encontrado',
+      position: 'bottom',
+      duration: 2500
+    });
+    toast.present();
+  }
+  async toastSuccessRecovery(message: string) {
+    const toast = await this.toastController.create({
+      message: `Se ha enviado el enlace a ${message}`,
+      position: 'bottom',
+      duration: 2000
+    });
+    toast.present();
+  }
 
   registro(form: NgForm){
     if (form.invalid) { return; }
+    this.logincSuccess();
     this.auth.postUser(this.infoUser).subscribe((resp: any) => {
     const uuid = resp.name;
     this.auth.nuevoUsuario(this.registerUser, uuid)
       .subscribe( usuario => {
-        console.log(usuario);
-        this.router.navigateByUrl('/tabs/tab2');
-      }, (err) => {
-        console.log(err);
+      this.loading.dismiss();
+      this.toastSuccess(usuario.email);
+      this.router.navigateByUrl('/tabs/inicio');
+    }, (err) => {
+      this.loading.dismiss();
+      this.toastErrorRegister();
+      console.log(err);
       });
+    });
+  }
+
+  recovery(form: NgForm){
+    this.logincSuccess();
+    this.auth.recovery(this.recoveryUser).subscribe( (resp: any) => {
+      this.loading.dismiss();
+      this.toastSuccessRecovery(resp.email);
+    }, (error) => {
+      this.loading.dismiss();
+      this.toastErrorMesage();
     });
   }
 
@@ -125,6 +167,12 @@ export class LoginPage implements OnInit {
   mostrarLogin(){
     this.slides.lockSwipes(false);
     this.slides.slideTo(0);
+    this.slides.lockSwipes(true);
+  }
+
+  mostrarRecovery(){
+    this.slides.lockSwipes(false);
+    this.slides.slideTo(2);
     this.slides.lockSwipes(true);
   }
 

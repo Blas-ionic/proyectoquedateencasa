@@ -16,12 +16,12 @@ export class Tab4Page {
     {
       icon: 'help-circle-outline',
       name: 'Información',
-      redirecTo: '/tabs/tab4//informacion'
+      redirecTo: '/tabs/quedatecasa/informacion'
     },
     {
         icon: 'people-outline',
         name: 'Comunidad',
-        redirecTo: '/tabs/tab4/comunidad'
+        redirecTo: '/tabs/quedatecasa/comunidad'
     }
   ];
 

@@ -115,4 +115,12 @@ export class AuthService {
     };
     return this.http.put(`${environment.urlUser}users/${uuid}.json`, AuthData);
   }
+
+  recovery(usuario: UsuarioModel){
+    const authData = {
+      requestType: 'PASSWORD_RESET',
+      email: usuario.email
+    };
+    return this.http.post(`${this.url}accounts:sendOobCode?key=${this.apikey}`, authData);
+  }
 }

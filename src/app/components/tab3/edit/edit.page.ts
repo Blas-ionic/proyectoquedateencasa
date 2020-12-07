@@ -33,7 +33,7 @@ export class EditPage implements OnInit {
     this.auth.putEmail(this.user)
       .subscribe(resp => {
         this.toastSuccess();
-        this.router.navigateByUrl('/tabs/tab3');
+        this.router.navigateByUrl('/tabs/usuario');
       }, (err) => {
         this.toastError();
       });
@@ -44,7 +44,7 @@ export class EditPage implements OnInit {
     this.auth.putInfoUser(this.info)
       .subscribe( resp => {
         this.toastSuccess();
-        this.router.navigateByUrl('/tabs/tab3');
+        this.router.navigateByUrl('/tabs/usuario');
       });
   }
 
