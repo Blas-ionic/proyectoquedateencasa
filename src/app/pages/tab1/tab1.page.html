@@ -15,6 +15,7 @@
 
 <ion-content color="light">
 
+    <ion-spinner *ngIf="loading" name="dots" style="width: 100%; margin-top: 85px; zoom:3.0;"></ion-spinner>
     <app-posts [posts]="posts"></app-posts>
 
     <ion-infinite-scroll [disabled]="!habilitar" threshold="150px" (ionInfinite)="nextPost($event)">

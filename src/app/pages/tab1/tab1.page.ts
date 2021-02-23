@@ -14,8 +14,10 @@ export class Tab1Page implements OnInit {
 
   posts: any = [];
   habilitar = true;
+  loading: boolean;
 
-  ngOnInit() {
+ngOnInit() {
+  this.loading = true;
     this.nextPost();
   }
 
@@ -40,6 +42,7 @@ export class Tab1Page implements OnInit {
     }
     this.postsService.getPosts(pull)
       .subscribe((resultado: any) => {
+        this.loading = false;
         this.posts = resultado;
         if (event) {
           event.target.complete();

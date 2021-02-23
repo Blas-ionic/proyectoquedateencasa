@@ -9,8 +9,7 @@ export class PostComponent implements OnInit {
 
   @Input() post: any = {};
 
-  img1 = '../.././/assets/images/quedate_portada.jpg';
-
+  img1 = '../../../assets/images/quedate_portada.jpg';
   constructor() { }
 
   ngOnInit() {}

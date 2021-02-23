@@ -5,19 +5,19 @@
                 <ion-grid fixed>
                     <ion-row>
                         <ion-col>
-                            <img src="/assets/images/quedate_logo.png">
+                            <img class="animate__animated animate__fadeInDown" src="/assets/images/quedate_logo.png">
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col>
                             <ion-list>
 
-                                <ion-item>
+                                <ion-item class="animate__animated animate__fadeInDown">
                                     <ion-label position="floating">Email</ion-label>
                                     <ion-input name="email" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="usuario.email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #email="ngModel"></ion-input>
                                 </ion-item>
 
-                                <ion-item>
+                                <ion-item class="animate__animated animate__fadeInUp">
                                     <ion-label position="floating">Password</ion-label>
                                     <ion-input name="password" [class.is-invalid]="password.invalid && password.touched" [(ngModel)]="usuario.password" type="password" required #password="ngModel"></ion-input>
                                 </ion-item>
@@ -27,7 +27,7 @@
                     </ion-row>
                     <ion-row>
                         <ion-col>
-                            <ion-button type="submit" color="tertiary" shape="round">
+                            <ion-button class="animate__animated animate__fadeInRight" type="submit" color="tertiary" shape="round">
                                 Login
                             </ion-button>
                         </ion-col>
@@ -120,7 +120,7 @@
         </ion-slide>
     </ion-slides>
 </ion-content>
-<ion-footer no-border>
+<ion-footer class="animate__animated animate__fadeInUp" no-border>
     <ion-toolbar>
         <ion-row>
             <ion-col>
